@@ -1,0 +1,12 @@
+<input [(ngModel)]="key" [ngModelOptions]="{standalone: true}" [value]="key" placeholder="key">
+
+<h1>Chat with ChatGPT</h1>
+<form (submit)="sendMessage()">
+  <input [(ngModel)]="message" [ngModelOptions]="{standalone: true}" [value]="message" placeholder="Type a message...">
+  <button>Send</button>
+</form>
+<ul>
+  <li *ngFor="let message of chatLog">
+    {{ message.user }}: {{ message.message }} (ChatGPT: {{ message.response }})
+  </li>
+</ul>
