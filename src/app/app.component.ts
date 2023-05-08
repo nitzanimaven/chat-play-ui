@@ -14,8 +14,8 @@ interface ChatMessage {
 export class AppComponent {
   message = "test";
   chatLog: ChatMessage[] = [];
-  // socket = io('https://chat-playground.onrender.com');
-  socket = io('http://localhost:3000');
+   socket = io('https://chat-playground.onrender.com');
+  //socket = io('http://localhost:3000');
   key: string = "";
 
   constructor() {
