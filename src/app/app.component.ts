@@ -17,12 +17,15 @@ export class AppComponent {
    socket = io('https://chat-playground.onrender.com');
   //socket = io('http://localhost:3000');
   key: string = "";
+  userId:string = "";
 
   constructor() {
+
+    this.socket.emit('join',this.userId)
+
     this.socket.on('status', (message: string) => {
       this.chatLog.push({ user: '', message, response: '' });
     });
-    // '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'
     this.socket.on('chat', (message: ChatMessage) => {
       this.chatLog.push(message);
     });
