@@ -9,8 +9,9 @@ interface ChatMessage {
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.component.html'
 })
+
 export class AppComponent {
   message = "test";
   chatLog: ChatMessage[] = [];
@@ -21,7 +22,7 @@ export class AppComponent {
 
   constructor() {
 
-    this.socket.emit('join',this.userId)
+    // this.socket.emit('join');
 
     this.socket.on('status', (message: string) => {
       this.chatLog.push({ user: '', message, response: '' });
